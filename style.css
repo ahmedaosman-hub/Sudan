@@ -15,3 +15,7 @@
     --primary-green: #007229;
 }
 
+button {
+    font-family: var(--call-to-action);
+    font-weight: var(--call-to-action-weight);
+}
