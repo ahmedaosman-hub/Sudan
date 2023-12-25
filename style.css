@@ -15,7 +15,26 @@
     --primary-green: #007229;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+body {
+    font-family: var(--regular-heading);
+    font-weight: var(--regular-heading-weight);
+}
+
+
 button {
     font-family: var(--call-to-action);
     font-weight: var(--call-to-action-weight);
+}
+
+
+
+blockquote {
+    font-family: var(--quotes);
+    font-weight: var(--quotes-weight);
 }
