@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300&family=Playfair+Display:ital@0;1&family=Roboto+Slab:wght@100;400&display=swap');
+
+:root {
+    --regular-heading: 'Roboto Slab', serif;
+    --regular-heading-weight: 400;
+    --call-to-action: 'Roboto Slab', serif;
+    --call-to-action-weight: 100;
+    --body: 'Open Sans', sans-serif;
+    --body-weight: 300;
+    --quotes: 'Playfair Display', serif;
+    --quotes-weight: 400;
+    --primary-red: #D21034;
+    --primary-white: #FFFFFF;
+    --primary-black: #000000;
+    --primary-green: #007229;
+}
+
