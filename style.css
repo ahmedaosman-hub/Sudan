@@ -30,6 +30,65 @@ body {
     background-color: var(--primary-white);
 }
 
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.hero {
+    background-image: url(assets/img/pyramid-landscape.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--primary-white);
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin: 20px;
+
+}
+
+.hero p {
+    max-width: 600px;
+    margin-bottom: 20px;
+
+}
+
+.hero button a {
+    color: var(--primary-white);
+    text-decoration: none;
+}
+
+.hero button {
+    background-color: var(--primary-black);
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 20px;
+
+}
+
+.hero button:hover {
+    background-color: var(--primary-red);
+    border-radius: 10px;
+    padding: .75rem;
+    font-size: 1.05rem;
+    text-decoration: none;
+    color: var(--primary-black);
+    transition: all 0.3s ease;
+}
+
 /* Heading styles: Applies specific font and weight to all heading elements and body */
 h1,
 h2,
@@ -41,6 +100,10 @@ body,
 header {
     font-family: var(--regular-heading);
     font-weight: var(--regular-heading-weight);
+}
+
+main {
+    flex-grow: 1;
 }
 
 /* Button styles: Sets the font for buttons */
@@ -106,4 +169,6 @@ footer {
     color: var(--primary-white);
     padding: 1rem;
     text-align: center;
+    position: sticky;
+    bottom: 0;
 }
