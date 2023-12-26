@@ -1,5 +1,7 @@
+/* Importing fonts from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300&family=Playfair+Display:ital@0;1&family=Roboto+Slab:wght@100;400&display=swap');
 
+/* Setting up root variables for easy theme management */
 :root {
     --regular-heading: 'Roboto Slab', serif;
     --regular-heading-weight: 400;
@@ -15,26 +17,86 @@
     --primary-green: #007229;
 }
 
+/* Universal style: Sets the default font for all elements */
+* {
+    font-family: var(--body);
+    font-weight: var(--body-weight);
+}
+
+/* Body style: Removes default margin and padding, sets background color */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-white);
+}
+
+/* Heading styles: Applies specific font and weight to all heading elements and body */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-body {
+body,
+header {
     font-family: var(--regular-heading);
     font-weight: var(--regular-heading-weight);
 }
 
-
+/* Button styles: Sets the font for buttons */
 button {
     font-family: var(--call-to-action);
     font-weight: var(--call-to-action-weight);
 }
 
-
-
+/* Blockquote style: Sets the font for blockquote elements */
 blockquote {
     font-family: var(--quotes);
     font-weight: var(--quotes-weight);
+}
+
+/* Navbar styling: Sets background color, positioning, and layout */
+nav {
+    background-color: var(--primary-black);
+    border-bottom: 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Style for unordered lists: Sets list style, layout, and spacing */
+ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    gap: 20px;
+    text-transform: uppercase;
+    margin: 0;
+    padding-top: 10px;
+}
+
+/* Style for links in the list: Sets text decoration and color */
+ul a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Hover effect for links: Changes background color, border radius, padding, font size, and transition effects */
+nav ul a:hover {
+    background-color: var(--primary-red);
+    border-radius: 10px;
+    padding: .75rem;
+    font-size: 1.05rem;
+    text-decoration: none;
+    color: var(--primary-black);
+    transition: all 0.3s ease;
+}
+
+/* Line-height for nav items: Ensures consistent line spacing */
+.nav-item {
+    line-height: 1.5;
 }
