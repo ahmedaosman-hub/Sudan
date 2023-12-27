@@ -234,6 +234,56 @@ main {
     object-fit: contain;
 }
 
+.events {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+
+.event {
+    background-color: var(--primary-green);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.event:first-child {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+.event:not(:first-child) {
+    grid-column: 2 / 3;
+}
+
+.events h2,
+.event h3,
+.event p {
+    text-align: left;
+}
+
+.event+.event {
+    border-top: 1px solid var(--primary-black);
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.event-date {
+    font-weight: bold;
+    color: var(--primary-green);
+}
+
+.read-more {
+    color: var(--primary-red);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
 /* Footer Styles */
 footer {
     background-color: var(--primary-black);
