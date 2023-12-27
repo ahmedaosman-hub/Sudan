@@ -1,7 +1,7 @@
 /* Importing fonts from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300&family=Playfair+Display:ital@0;1&family=Roboto+Slab:wght@100;400&display=swap');
 
-/* Setting up root variables for easy theme management */
+/* Root Variables for Theme Management */
 :root {
     --regular-heading: 'Roboto Slab', serif;
     --regular-heading-weight: 400;
@@ -17,20 +17,126 @@
     --primary-green: #007229;
 }
 
-/* Universal style: Sets the default font for all elements */
+/* Universal Styles */
 * {
     font-family: var(--body);
     font-weight: var(--body-weight);
 }
 
-/* Body style: Removes default margin and padding, sets background color */
+/* Body Style */
 body {
     margin: 0;
     padding: 0;
     background-color: var(--primary-white);
 }
 
-/* Heading styles: Applies specific font and weight to all heading elements and body */
+/* Page Container */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header and Navigation Styles */
+nav {
+    background-color: var(--primary-black);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 40px;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    gap: 20px;
+    margin: 0;
+    padding-top: 10px;
+    text-transform: uppercase;
+}
+
+ul a {
+    text-decoration: none;
+    color: white;
+}
+
+nav ul a:hover {
+    background-color: var(--primary-red);
+    border-radius: 10px;
+    padding: .75rem;
+    font-size: 1.05rem;
+    color: var(--primary-black);
+    transition: all 0.3s ease;
+}
+
+.nav-item {
+    line-height: 1.5;
+}
+
+/* Hero Section Styles */
+.hero {
+    background-image: url(assets/img/pyramid-landscape.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--primary-white);
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin: 20px;
+}
+
+.hero p {
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+/* Button Styles */
+button {
+    font-family: var(--call-to-action);
+    font-weight: var(--call-to-action-weight);
+}
+
+.btn-bookNow a {
+    color: var(--primary-white);
+    text-decoration: none;
+}
+
+
+.btn-bookNow {
+    background-color: var(--primary-black);
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 20px;
+}
+
+
+.btn-bookNow:hover {
+    background-color: var(--primary-red);
+    border-radius: 10px;
+    padding: .75rem;
+    font-size: 1.05rem;
+    color: var(--primary-black);
+    transition: all 0.3s ease;
+}
+
+/* Heading Styles */
 h1,
 h2,
 h3,
@@ -43,67 +149,164 @@ header {
     font-weight: var(--regular-heading-weight);
 }
 
-/* Button styles: Sets the font for buttons */
-button {
-    font-family: var(--call-to-action);
-    font-weight: var(--call-to-action-weight);
+/* Main Content */
+main {
+    flex-grow: 1;
 }
 
-/* Blockquote style: Sets the font for blockquote elements */
+/* Blockquote Style */
 blockquote {
     font-family: var(--quotes);
     font-weight: var(--quotes-weight);
 }
 
-/* Navbar styling: Sets background color, positioning, and layout */
-nav {
-    background-color: var(--primary-black);
-    border-bottom: 40px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+/* Section Styles */
+main {
     display: flex;
-    justify-content: space-around;
-}
-
-/* Style for unordered lists: Sets list style, layout, and spacing */
-ul {
-    list-style-type: none;
-    display: flex;
+    flex-direction: column;
     align-items: center;
+    padding: 20px;
+}
+
+.about-us,
+.guest-reviews,
+.special-offers,
+.gallery,
+.events {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+}
+
+.description {
+    width: 100%;
+}
+
+.reviews-container,
+.offers {
+    display: flex;
+    flex-direction: row;
     justify-content: center;
-    font-size: 1.5rem;
+    flex-wrap: wrap;
     gap: 20px;
-    text-transform: uppercase;
-    margin: 0;
-    padding-top: 10px;
+    margin-top: 20px;
+    width: 100%;
 }
 
-/* Style for links in the list: Sets text decoration and color */
-ul a {
+.review,
+.offer {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid var(--primary-black);
+    border-radius: 5px;
+    background-color: var(--primary-green);
+    color: var(--primary-white);
+}
+
+.divider {
+    border: 1px solid var(--primary-black);
+}
+
+.offer-img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    transition: 1s;
+}
+
+.offer-img:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    width: 400px;
+    height: 400px;
+}
+
+.price span {
+    font-weight: bold;
+}
+
+.carousel-item img {
+    width: 90%;
+    height: 500px;
+    object-fit: contain;
+}
+
+.events {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+
+.event {
+    background-color: var(--primary-green);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.event:first-child {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+.event:not(:first-child) {
+    grid-column: 2 / 3;
+}
+
+.events h2,
+.event h3,
+.event p {
+    text-align: left;
+}
+
+.event+.event {
+    border-top: 1px solid var(--primary-black);
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.event-date {
+    font-weight: bold;
+    color: var(--primary-green);
+}
+
+.read-more {
+    color: var(--primary-red);
     text-decoration: none;
-    color: white;
+    font-weight: bold;
 }
 
-/* Hover effect for links: Changes background color, border radius, padding, font size, and transition effects */
-nav ul a:hover {
-    background-color: var(--primary-red);
-    border-radius: 10px;
-    padding: .75rem;
-    font-size: 1.05rem;
-    text-decoration: none;
-    color: var(--primary-black);
-    transition: all 0.3s ease;
+.read-more:hover {
+    text-decoration: underline;
 }
 
-/* Line-height for nav items: Ensures consistent line spacing */
-.nav-item {
-    line-height: 1.5;
-}
-
+/* Footer Styles */
 footer {
     background-color: var(--primary-black);
     color: var(--primary-white);
     padding: 1rem;
     text-align: center;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: start;
+    margin-bottom: 20px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-copyright {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 20px;
 }
