@@ -228,6 +228,12 @@ main {
     font-weight: bold;
 }
 
+.carousel-item img {
+    width: 90%;
+    height: 500px;
+    object-fit: contain;
+}
+
 /* Footer Styles */
 footer {
     background-color: var(--primary-black);
