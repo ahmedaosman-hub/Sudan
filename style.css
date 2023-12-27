@@ -115,7 +115,6 @@ button {
     text-decoration: none;
 }
 
-
 .btn-bookNow {
     background-color: var(--primary-black);
     border: none;
@@ -125,7 +124,6 @@ button {
     transition: background-color 0.3s ease;
     margin: 20px;
 }
-
 
 .btn-bookNow:hover {
     background-color: var(--primary-red);
@@ -152,6 +150,10 @@ header {
 /* Main Content */
 main {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 }
 
 /* Blockquote Style */
@@ -161,13 +163,6 @@ blockquote {
 }
 
 /* Section Styles */
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-}
-
 .about-us,
 .guest-reviews,
 .special-offers,
@@ -240,7 +235,6 @@ main {
     gap: 20px;
 }
 
-
 .event {
     background-color: var(--primary-green);
     padding: 15px;
@@ -309,4 +303,119 @@ footer {
     grid-column: 1 / -1;
     text-align: center;
     margin-top: 20px;
+}
+
+
+/* Media Queries */
+
+/* iPhone 11, 12, 13, and 14 - 375px */
+@media only screen and (max-width: 375px) {
+    body {
+        font-size: 15px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+    }
+
+    .nav-item a {
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .offers,
+    .reviews-container {
+        flex-direction: column;
+    }
+
+    .offer,
+    .review {
+        width: 100%;
+    }
+
+    .carousel-item img {
+        height: 350px;
+    }
+
+    .events {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* iPhone 11 Pro, 12/13/14 Pro - 390px */
+@media only screen and (max-width: 390px) {
+    body {
+        font-size: 15px;
+    }
+
+    .nav-item a {
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 2.1rem;
+    }
+
+    .offer-img,
+    .carousel-item img {
+        height: 360px;
+    }
+}
+
+/* iPhone 11 Pro Max, 12/13/14 Pro Max - 428px */
+@media only screen and (max-width: 428px) {
+    body {
+        font-size: 16px;
+    }
+
+    .nav-item a {
+        font-size: 15px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .offer-img,
+    .carousel-item img {
+        height: 400px;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-item a {
+        display: block;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .navbar img {
+        width: 80px;
+        /* Adjust logo size */
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-column {
+        padding: 10px;
+        text-align: center;
+    }
 }
