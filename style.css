@@ -290,6 +290,23 @@ footer {
     color: var(--primary-white);
     padding: 1rem;
     text-align: center;
-    position: sticky;
-    bottom: 0;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: start;
+    margin-bottom: 20px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-copyright {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 20px;
 }
