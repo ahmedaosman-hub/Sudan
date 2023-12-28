@@ -23,6 +23,10 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.0.0/font/bootstrap-icons.css"
+    />
 
     <title>The Oasis Hotel</title>
   </head>
@@ -30,7 +34,7 @@
   <body>
     <div class="page-container">
       <header>
-        <nav class="navbar">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <button
             class="navbar-toggler"
             type="button"
@@ -47,20 +51,26 @@
             <img
               src="assets/logo/logo.svg"
               alt="Oasis Hotel, The Spirit of Sudan"
-              height="30"
+              height="150"
             />
           </a>
 
-          <div class="nav-container">
-            <ul class="nav-menu">
+          <div class="collapse nav-container" id="navbarToggler">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 nav-menu">
               <li class="nav-item">
-                <a href="#"> The Oasis Hotel</a>
+                <a class="nav-link" href="#"> The Oasis Hotel</a>
               </li>
-              <li class="nav-item"><a href="#">Discover Sudan</a></li>
-              <li class="nav-item"><a href="#">Dining</a></li>
-              <li class="nav-item"><a href="#">Accommodations</a></li>
-              <li class="nav-item"><a href="#">Book</a></li>
-              <li class="nav-item"><a href="#">Rewards</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"> Discover Sudan</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#"> Dining</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"> Accommodations</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#"> Book</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"> Rewards</a>
+              </li>
             </ul>
 
             <ul class="navbar-nav">
@@ -75,12 +85,13 @@
                   <i class="bi bi-briefcase"></i>
                 </a>
                 <a class="nav-link" href="#">
-                  <i class="bi bi-person circle"></i>
+                  <i class="bi bi-person-circle"></i>
                 </a>
               </li>
             </ul>
           </div>
         </nav>
+
         <section class="hero">
           <h1>Your next travel destination</h1>
           <p>
