@@ -1,31 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // JavaScript to toggle the slide-out menu
   const menuButton = document.querySelector(".navbar-toggle");
-  const slideOutMenu = document.querySelector(".slide-out-menu");
-  const overlay = document.querySelector(".overlay");
+  const navigationBox = document.querySelector(".navigation-box"); // Selector for the navigation box
+  const slideOutMenu = document.getElementById("slide-out-menu");
+  const overlay = document.getElementById("menu-overlay");
 
-  menuButton.addEventListener("click", () => {
-    slideOutMenu.style.left = slideOutMenu.style.left === "0%" ? "-100%" : "0%";
-    overlay.style.display =
-      overlay.style.display === "block" ? "none" : "block";
+  // Toggle slide-out menu, overlay, and hamburger animation
+  menuButton.addEventListener("click", function () {
+    slideOutMenu.classList.toggle("active");
+    overlay.classList.toggle("active");
+    navigationBox.classList.toggle("active"); // Toggle the class for the 'X' transformation
+
+    // Prevent or allow scrolling
+    if (slideOutMenu.classList.contains("active")) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
   });
 
   // Close the menu when clicking on the overlay
-  overlay.addEventListener("click", () => {
-    slideOutMenu.style.left = "-100%";
-    overlay.style.display = "none";
+  overlay.addEventListener("click", function () {
+    slideOutMenu.classList.remove("active");
+    overlay.classList.remove("active");
+    navigationBox.classList.remove("active"); // Remove the class for the 'X' transformation
+    document.body.style.overflow = "";
   });
-});
-
-// Add this script at the end of your HTML, before the closing </body> tag.
-document.addEventListener("DOMContentLoaded", function () {
-  var menuToggle = document.querySelector(".navbar-toggle");
-  var slideOutMenu = document.getElementById("slide-out-menu");
-
-  menuToggle.addEventListener("click", function () {
-    this.children[0].classList.toggle("active");
-    slideOutMenu.classList.toggle("active");
-  });
-
-  // Since you're not using the overlay, there's no need to close the menu when it's clicked
 });
