@@ -44,6 +44,7 @@ body {
 /* Header and Navigation Styles */
 .navbar-container {
     /* Add styles if needed */
+
 }
 
 .navbar-header {
@@ -55,7 +56,46 @@ body {
     width: 100%;
 }
 
+.navbar-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
 
+.navigation-box {
+    position: relative;
+    width: 16px;
+    height: 16px;
+}
+
+.cs-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    background-color: black;
+    left: 0;
+    transition: transform 0.3s ease;
+}
+
+.cs-line1 {
+    top: 0;
+}
+
+.cs-line2 {
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+.cs-line3 {
+    bottom: 0;
+}
 
 /* Book Now Button Styles */
 .button.book-now {
@@ -103,11 +143,6 @@ body {
     line-height: .75rem;
     text-align: center;
     text-transform: uppercase;
-}
-
-.navbar-toggle {
-    display: none;
-    /* Adjusted to not display since not functional in provided HTML */
 }
 
 .navbar-brand {
