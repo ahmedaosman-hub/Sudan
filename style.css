@@ -50,10 +50,9 @@ body {
 .navbar-header {
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 4rem;
+    justify-content: space-between;
     padding: 0.625rem;
-    width: 100%;
+    position: relative;
 }
 
 .navbar-toggle {
@@ -74,9 +73,9 @@ body {
 }
 
 .navbar-brand {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .navbar-brand img {
@@ -107,6 +106,85 @@ body {
 .cs-line3 {
     bottom: 0;
 }
+
+.navbar-toggle,
+.navbar-brand,
+.navbar-book,
+#dark-mode-toggle {
+    flex: 1;
+    /* This will give each item equal width */
+    display: flex;
+    justify-content: center;
+    /* This will center the content of each item horizontally */
+    align-items: center;
+    /* This will center the content of each item vertically */
+}
+
+/* Dark Mode Toggle Button Styles */
+#dark-mode-toggle {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    order: 2;
+    /* Space from the book button */
+    display: flex;
+    /* Aligns the icons horizontally */
+    align-items: center;
+    justify-content: center;
+    /* Center align vertically */
+    position: relative;
+    z-index: 10;
+    margin-right: 10px;
+    height: 36px;
+}
+
+
+/* Icon Styles */
+.icon-moon,
+.icon-sun {
+    font-size: 1.5rem;
+    /* Adjust the size as needed */
+    margin: 0 0.5rem;
+    /* Space between icons */
+    color: var(--primary-black);
+    align-self: center;
+    line-height: 1;
+    margin-top: 2px;
+}
+
+/* Initially hide the moon icon */
+.icon-moon {
+    display: block;
+    /* Visible by default */
+}
+
+/* Show the sun icon */
+.icon-sun {
+    display: none;
+    /* Hidden by default */
+}
+
+
+
+.navbar-icons,
+.navbar-book {
+    display: flex;
+    align-items: center;
+    height: 36px;
+    width: auto;
+}
+
+.navbar-icons {
+    justify-content: flex-start;
+}
+
+.navbar-book {
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+
 
 /* Book Now Button Styles */
 .button.book-now {
@@ -176,6 +254,13 @@ body {
     color: #1a1a1a;
     letter-spacing: 2px;
     text-align: center;
+    order: 3;
+}
+
+.navbar-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .book-now {
@@ -278,6 +363,9 @@ footer {
 }
 
 /* Media Queries for Responsive Design */
+@media only screen and (min-width: 0em) {}
+
+
 /* xs */
 @media (min-width: 475px) {
     .page-container {
