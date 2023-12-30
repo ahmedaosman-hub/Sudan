@@ -38,7 +38,12 @@ body {
 }
 
 /* Header and Navigation Styles */
-.navbar-container {}
+.navbar-container {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--primary-white);
+}
 
 .navbar-container::after {
     position: absolute;
@@ -199,7 +204,7 @@ body {
     position: fixed;
     top: 57px;
     left: 0;
-    width: 80%;
+    width: 90%;
     height: calc(100% - 57px);
     background-color: var(--primary-white);
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
