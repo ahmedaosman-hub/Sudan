@@ -383,7 +383,7 @@ body {
 /* Book Now Button Styles */
 .button.book-now {
     background-color: var(--primary-white);
-    border: 1px solid var(--primary-white);
+    border: 1px solid var(--primary-black);
     color: #1a1a1a;
     font-weight: bold;
     padding: .625rem;
@@ -452,9 +452,8 @@ body {
 }
 
 .book-now {
-    border-color: #1a1a1a;
-    background: #1a1a1a;
-    color: white;
+    background: var(--primary-white);
+    color: var(--primary-black);
     margin-bottom: 0;
     padding: 0.625rem;
     margin-left: 1.25rem;
@@ -480,7 +479,7 @@ body {
 .buttonMobile {
     margin-bottom: 0;
     display: block;
-    color: white;
+    color: black;
 }
 
 /* Hero Section Styles */
@@ -561,9 +560,13 @@ body.dark-mode .slide-out-menu {
     color: #fff;
 }
 
-body.dark-mode .button {
-    background-color: #fff;
-    color: #000;
+body.dark-mode .book-now {
+    background-color: var(--primary-black);
+    border: 1px solid var(--primary-white);
+}
+
+body.dark-mode .buttonMobile {
+    color: white;
 }
 
 body.dark-mode .cs-line {
@@ -577,6 +580,7 @@ body.dark-mode .cs-line {
 body.dark-mode #navbar-logo-light {
     display: none;
 }
+
 body.dark-mode #navbar-logo-dark {
     display: block;
 }
