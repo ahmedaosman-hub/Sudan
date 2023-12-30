@@ -51,23 +51,36 @@
                 </div>
               </button>
               <!--Dark Mode Button-->
-              <button id="dark-mode-toggle" aria-label="dark mode toggle">
-                <span class="icon-moon">
-                  <!--Moon-->
-                  <i class="fa-solid fa-moon"></i>
-                </span>
-                <span class="icon-sun">
-                  <!-- Sun -->
-                  <i class="fa-solid fa-sun"></i>
-                </span>
+              <button
+                id="dark-mode-toggle"
+                class="dark-mode-toggle custom-dark-button"
+              >
+                <svg
+                  width="18"
+                  height="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 496 496"
+                >
+                  <path
+                    d="M8,256C8,393,119,504,256,504S504,393,504,256,393,8,256,8,8,119,8,256ZM256,440V72a184,184,0,0,1,0,368Z"
+                    transform="translate(-8 -8)"
+                  />
+                </svg>
               </button>
             </div>
 
             <!-- Brand Logo -->
             <div class="navbar-brand">
-              <a class="brand" href="#">
-                <img src="assets/logo/navbarLogo.svg" alt="Oasis Hotel Logo" />
-              </a>
+              <img
+                src="assets/logo/navbar/lightMode.svg"
+                alt="Oasis Hotel Logo"
+                id="navbar-logo-light"
+              />
+              <img
+                src="assets/logo/navbar/darkMode.svg"
+                alt="Oasis Hotel Logo"
+                id="navbar-logo-dark"
+              />
             </div>
 
             <!-- Slide out menu -->
@@ -329,6 +342,7 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
       crossorigin="anonymous"
     ></script>
-    <script src="script.js"></script>
+    <script src="assets/javascript/nav.js"></script>
+    <script src="assets/javascript/dark.js"></script>
   </body>
 </html>
