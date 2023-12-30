@@ -1,17 +1,14 @@
 /* Importing fonts from Google Fonts and icons from Bootstrap Icons */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=Lato&family=Raleway:wght@700&display=swap');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
 
 /* Root Variables for Theme Management */
 :root {
-    --regular-heading: 'Montserrat', sans-serif;
-    --regular-heading-weight: 400;
-    --call-to-action: 'Roboto Slab', serif;
-    --call-to-action-weight: 100;
-    --body: 'Open Sans', sans-serif;
-    --body-weight: 300;
+    --regular-heading: 'Cormorant Garamond', sans-serif;
+    --call-to-action: 'Raleway', serif;
+    --body: 'Lato', sans-serif;
+    --body-weight: 400;
     --quotes: 'Playfair Display', serif;
-    --quotes-weight: 400;
     --primary-red: #D21034;
     --primary-white: #FFFFFF;
     --primary-black: #000000;
@@ -21,7 +18,6 @@
 /* Universal Styles */
 * {
     font-family: var(--body);
-    font-weight: var(--body-weight);
     padding: 0;
     margin: 0;
     box-sizing: border-box;
