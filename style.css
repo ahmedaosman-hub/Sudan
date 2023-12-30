@@ -1,6 +1,5 @@
-/* Importing fonts from Google Fonts */
+/* Importing fonts from Google Fonts and icons from Bootstrap Icons */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-/* Importing icons from Bootstrap Icons */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
 
 /* Root Variables for Theme Management */
@@ -19,8 +18,6 @@
     --primary-green: #007229;
 }
 
-
-
 /* Universal Styles */
 * {
     font-family: var(--body);
@@ -35,11 +32,7 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-
-
 }
-
-
 
 /* Body Style */
 body {
@@ -48,10 +41,10 @@ body {
     background-color: var(--primary-white);
 }
 
-
-
 /* Header and Navigation Styles */
-.navbar-container {}
+.navbar-container {
+    /* Add styles if needed */
+}
 
 .navbar-header {
     display: flex;
@@ -63,44 +56,40 @@ body {
 }
 
 
+
+/* Book Now Button Styles */
 .button.book-now {
     background-color: var(--primary-white);
     border: 1px solid var(--primary-white);
-    margin-left: 1.25rem;
-    padding: .625rem;
-    text-decoration: none;
     color: #1a1a1a;
     font-weight: bold;
-    cursor: pointer;
+    padding: .625rem;
+    text-decoration: none;
     display: flex;
-    width: auto;
-    min-width: 0;
-    height: 100%;
     align-items: center;
     justify-content: center;
     font-size: .6875rem;
-    font-weight: 700;
     letter-spacing: .15625rem;
     line-height: .75rem;
     text-align: center;
-
+    transition: all .5s cubic-bezier(.24, .5, .22, .89);
 }
 
+.button.book-now:hover {
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+}
+
+/* General Button Styles */
 .button {
     overflow: visible;
-    width: auto;
     margin: 0;
     -webkit-appearance: none;
     background: transparent;
-    /* color: inherit; */
     font: inherit;
     -webkit-font-smoothing: inherit;
     -moz-osx-font-smoothing: inherit;
-    /* line-height: normal; */
-    display: inline-block;
     cursor: pointer;
-    /* outline: none; */
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     text-decoration: none;
     position: relative;
     min-width: 11.25rem;
@@ -114,14 +103,11 @@ body {
     line-height: .75rem;
     text-align: center;
     text-transform: uppercase;
-    transition: all .5s cubic-bezier(.24, .5, .22, .89);
 }
 
 .navbar-toggle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+    display: none;
+    /* Adjusted to not display since not functional in provided HTML */
 }
 
 .navbar-brand {
@@ -133,79 +119,7 @@ body {
 .navbar-brand img {
     height: 100px;
     max-height: 100%;
-    gap: 30px;
     width: auto;
-}
-
-.navbar-toggle,
-.navbar-toggle .bar {
-    margin: 0;
-    padding: 0;
-}
-
-
-
-.button.book-now:hover {
-    background-color: #000;
-    color: #fff;
-}
-
-.navbar-toggle #closeMenu {
-    display: none;
-}
-
-.navbar-toggle #openMenu {
-    display: block;
-}
-
-
-.navbar-dropdown {
-    display: none;
-    position: absolute;
-    top: 3.375rem;
-    left: 0;
-    background-color: var(--primary-white);
-    width: 100%;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    flex-direction: column;
-}
-
-.navbar-dropdown.active {
-    display: flex;
-}
-
-.navbar-dropdown ul {
-    list-style-type: none;
-    width: 100%;
-    padding-left: 0;
-}
-
-.navbar-dropdown li {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    border-bottom: 1px solid #eaeaea;
-}
-
-.navbar-dropdown li:last-child {
-    border-bottom: none;
-}
-
-.navbar-dropdown a {
-    text-decoration: none;
-    color: inherit;
-    font-size: 1rem;
-    display: block;
-}
-
-.navbar-links {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
 }
 
 /* Hero Section Styles */
@@ -229,58 +143,13 @@ body {
     margin: 20px;
 }
 
-
-
-
-/* Button Styles */
-button {
-    font-family: var(--call-to-action);
-    font-weight: var(--call-to-action-weight);
-}
-
-.bookNow {
-    background-color: transparent;
-    border: 2px solid var(--primary-black);
-    color: var(--primary-white);
-    font-weight: bold;
-    padding: 8px 16px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.bookNow:hover {
-    background-color: var(--primary-white);
-    color: var(--primary-black);
-}
-
-/* Heading Styles */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-body,
-header {
-    font-family: var(--regular-heading);
-    font-weight: var(--regular-heading-weight);
-}
-
-
-/* Main Content */
+/* Main Content Styles */
 main {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-}
-
-/* Blockquote Style */
-blockquote {
-    font-family: var(--quotes);
-    font-weight: var(--quotes-weight);
 }
 
 /* Section Styles */
@@ -296,108 +165,7 @@ blockquote {
     margin: auto;
 }
 
-.description {
-    width: 100%;
-}
-
-.reviews-container,
-.offers {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
-    width: 100%;
-}
-
-.review,
-.offer {
-    width: 300px;
-    padding: 10px;
-    border: 1px solid var(--primary-black);
-    border-radius: 5px;
-    background-color: var(--primary-green);
-    color: var(--primary-white);
-}
-
-.divider {
-    border: 1px solid var(--primary-black);
-}
-
-.offer-img {
-    display: block;
-    width: 100%;
-    height: 300px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    transition: 1s;
-}
-
-.offer-img:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
-    width: 400px;
-    height: 400px;
-}
-
-.price span {
-    font-weight: bold;
-}
-
-.carousel-item img {
-    width: 90%;
-    height: 500px;
-    object-fit: contain;
-}
-
-.events {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 20px;
-}
-
-.event {
-    background-color: var(--primary-green);
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.event:first-child {
-    grid-column: 1 / 2;
-    grid-row: 1 / 3;
-}
-
-.event:not(:first-child) {
-    grid-column: 2 / 3;
-}
-
-.events h2,
-.event h3,
-.event p {
-    text-align: left;
-}
-
-.event+.event {
-    border-top: 1px solid var(--primary-black);
-    padding-top: 20px;
-    margin-top: 20px;
-}
-
-.event-date {
-    font-weight: bold;
-    color: var(--primary-green);
-}
-
-.read-more {
-    color: var(--primary-red);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.read-more:hover {
-    text-decoration: underline;
-}
+/* Additional styles for specific sections (e.g., reviews-container, offers, etc.) */
 
 /* Footer Styles */
 footer {
@@ -420,15 +188,7 @@ footer {
     flex-direction: column;
 }
 
-.footer-copyright {
-    grid-column: 1 / -1;
-    text-align: center;
-    margin-top: 20px;
-}
-
-
-/* Media Queries */
-
+/* Media Queries for Responsive Design */
 /* xs */
 @media (min-width: 475px) {
     .page-container {
@@ -448,9 +208,6 @@ footer {
     .page-container {
         max-width: 768px;
     }
-
-
-
 }
 
 /* lg */
@@ -458,6 +215,7 @@ footer {
     .page-container {
         max-width: 1024px;
     }
+
 }
 
 /* xl */
