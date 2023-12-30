@@ -40,6 +40,27 @@ body {
 /* Header and Navigation Styles */
 .navbar-container {}
 
+.navbar-container::after {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background: transparent;
+    content: "";
+}
+
+.navbar-container::before {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+}
+
 /* Header styling, using flexbox for layout */
 .navbar-header {
     display: flex;
@@ -47,6 +68,7 @@ body {
     justify-content: space-between;
     padding: 0.625rem;
     position: relative;
+    border-bottom: 1px solid #d3d3d3;
 }
 
 /* Header styling, using flexbox for layout */
@@ -56,9 +78,9 @@ body {
     align-items: center;
     width: 36px;
     height: 36px;
-    background-color: transparent;
     border: none;
     cursor: pointer;
+    background-color: transparent;
 }
 
 /* Container for the menu icon lines */
@@ -172,6 +194,186 @@ body {
     margin-left: auto;
 }
 
+/* Slide out menu items */
+.slide-out-menu {
+    position: fixed;
+    top: 57px;
+    left: 0;
+    width: 80%;
+    height: calc(100% - 57px);
+    background-color: var(--primary-white);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.slide-out-menu.active {
+    transform: translateX(0);
+}
+
+.menu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+}
+
+.menu-top::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: #d3d3d3;
+    width: 85%;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+.menu-icons {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.menu-icons li {
+    margin-right: 10px;
+}
+
+.menu-icons li:last-child {
+    margin-right: 0
+}
+
+
+
+.menu-icons li a {
+    display: block;
+    padding: 0.625rem;
+    color: black;
+}
+
+.language-selector {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.language-selector:after {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.menu-container {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-container li a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: normal;
+    color: #333;
+    text-decoration: none;
+}
+
+.menu-container li a:hover {
+    background-color: #f5f5f5;
+}
+
+.menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.menu-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 10px 20px;
+}
+
+.menu-item a {
+    display: flex;
+    justify-content: space-between;
+    /* Aligns items to start and end of the container */
+    align-items: center;
+    /* Center items vertically */
+    position: relative;
+    /* For positioning the pseudo-element */
+    padding: 10px 20px;
+    /* Add padding as needed */
+    text-decoration: none;
+    color: #333;
+    /* Adjust text color as needed */
+    /* Creates a single line below each item */
+}
+
+.menu-item:last-child a {
+    border-bottom: none;
+    /* Removes the border from the last item */
+}
+
+.menu-item::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: #d3d3d3;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    /* Length of the horizontal line */
+}
+
+.menu-item a:hover {
+    background-color: black;
+    /* Light grey background on hover */
+}
+
+.link-text {
+    flex-grow: 1;
+    /* Ensures the text takes up the available space pushing the icon to the end */
+}
+
+.link-icon {
+    /* If you need to adjust the icon's styling, do it here */
+}
+
+/* Add active class styles for the hamburger lines to change to 'X' */
+.navigation-box.active .cs-line1 {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.navigation-box.active .cs-line2 {
+    opacity: 0;
+}
+
+.navigation-box.active .cs-line3 {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
 
 
 /* Book Now Button Styles */
@@ -245,11 +447,6 @@ body {
     order: 3;
 }
 
-.navbar-buttons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 .book-now {
     border-color: #1a1a1a;
@@ -271,7 +468,6 @@ body {
     line-height: .75rem;
     text-align: center;
     text-transform: uppercase;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .buttonDesktop {
