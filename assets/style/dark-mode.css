@@ -80,3 +80,7 @@ body.dark-mode .buttonMobile {
 body.dark-mode #navbar-logo-dark {
     display: block;
 }
+
+body.dark-mode #navbar-logo-light {
+    display: none;
+}
