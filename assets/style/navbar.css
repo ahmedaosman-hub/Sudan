@@ -1,0 +1,345 @@
+/* Header and Navigation Styles */
+.navbar-container {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--primary-white);
+}
+
+.navbar-container::after,
+.navbar-container::before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+}
+
+.navbar-container::after {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background: transparent;
+}
+
+.navbar-container::before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Navbar Header - Includes logo, navigation, and buttons */
+.navbar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.625rem;
+    position: relative;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+/* Navbar Icons */
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.navbar-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hamburger Menu Lines */
+.cs-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    background-color: var(--primary-black);
+    left: 0;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cs-line1 {
+    top: 0;
+}
+
+.cs-line2 {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.cs-line3 {
+    bottom: 0;
+}
+
+/* Active class styles for the hamburger lines */
+.navigation-box.active .cs-line1 {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.navigation-box.active .cs-line2 {
+    opacity: 0;
+}
+
+.navigation-box.active .cs-line3 {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Container for the menu icon lines */
+.navigation-box {
+    position: relative;
+    width: 16px;
+    height: 16px;
+}
+
+/* Navbar Brand - Logo in the center of the navbar */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navbar-brand img {
+    height: auto;
+    max-height: 100%;
+    max-width: 100px;
+    width: auto;
+}
+
+/* Slide Out Menu - Hidden menu for mobile view */
+.slide-out-menu {
+    position: fixed;
+    top: 57px;
+    left: 0;
+    width: 90%;
+    height: calc(100% - 57px);
+    background-color: var(--primary-white);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.slide-out-menu.active {
+    transform: translateX(0);
+}
+
+/* Menu Top - Top section of the slide out menu */
+.menu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+}
+
+.menu-top::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: #d3d3d3;
+    width: 85%;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+/* Menu Icons - Icons in the top section of the menu */
+.menu-icons {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.menu-icons li {
+    margin-right: 10px;
+}
+
+.menu-icons li:last-child {
+    margin-right: 0;
+}
+
+.menu-icons li a {
+    display: block;
+    padding: 0.625rem;
+    color: black;
+}
+
+/* Language Selector - Dropdown for language selection */
+.language-selector {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.language-selector:after {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+/* Menu Items - Items in the slide out menu */
+.menu-container {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.menu-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-container li a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: normal;
+    color: #333;
+    text-decoration: none;
+}
+
+.menu-container li a:hover {
+    background-color: #f5f5f5;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 10px 20px;
+}
+
+.menu-item a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+.menu-item:last-child a {
+    border-bottom: none;
+}
+
+.menu-item::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: #d3d3d3;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+}
+
+.menu-item a:hover {
+    background-color: black;
+}
+
+.link-text {
+    flex-grow: 1;
+}
+
+.link-icon {}
+
+/* Book Now Button - Call to action button */
+.navbar-book {
+    display: flex;
+    align-items: center;
+    height: 36px;
+    width: auto;
+    justify-content: flex-end;
+    margin-left: auto;
+    color: #1a1a1a;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.button.book-now {
+    background-color: var(--primary-white);
+    border: 1px solid var(--primary-black);
+    color: #1a1a1a;
+    font-weight: bold;
+    padding: .625rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .6875rem;
+    letter-spacing: .15625rem;
+    line-height: .75rem;
+    text-align: center;
+    transition: all .5s cubic-bezier(.24, .5, .22, .89);
+}
+
+.button.book-now:hover {
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+}
+
+
+
+/* Additional Button Styles for Different Views */
+.book-now {
+    background: var(--primary-white);
+    color: var(--primary-black);
+    padding: 0.625rem;
+    display: flex;
+    width: auto;
+    min-width: 0;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+    font-size: .6875rem;
+    font-weight: 700;
+    letter-spacing: .15625rem;
+    line-height: .75rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.buttonDesktop {
+    display: none;
+}
+
+.buttonMobile {
+    display: block;
+    color: black;
+}
+
+.menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
