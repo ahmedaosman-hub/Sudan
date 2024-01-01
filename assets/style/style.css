@@ -25,44 +25,68 @@
     box-sizing: border-box;
 }
 
-/* Container that limits the width of the content based on viewport */
-.page-container {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+/* Apply the regular heading font to all header elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--regular-heading);
 }
 
-.darkmode {
-    --clr-light: #fdffc4;
-    --clr-dark: #00332a;
+/* Apply the body font to all body text */
+body,
+p,
+li,
+a,
+span,
+input,
+select,
+textarea,
+button {
+    font-family: var(--body);
+}
+
+/* Apply the call-to-action font to all buttons */
+button,
+.button,
+input[type="submit"],
+input[type="button"],
+.btn {
+    font-family: var(--call-to-action);
+}
+
+/* Dark Mode */
+body.dark-mode {
+    --foreground: var(--clr-light);
+    --background: var(--clr-dark);
     --clr-primary: #202302;
     --clr-secondary: #00100d;
     --clr-accent: #ff7750;
-
-    --foreground: var(--clr-light);
-    --background: var(--clr-dark);
+    background-color: #000;
+    color: #fff;
 }
 
-
-
-
-/* Body styling, setting up the default background color */
+/* Body and Container Styles */
 body {
     margin: 0;
     padding: 0;
     background-color: var(--primary-white);
 }
 
+.page-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-/* General Button Styles */
+/* Button Styles */
 .button {
     overflow: visible;
     margin: 0;
-    -webkit-appearance: none;
     background: transparent;
     font: inherit;
-    -webkit-font-smoothing: inherit;
-    -moz-osx-font-smoothing: inherit;
     cursor: pointer;
     text-decoration: none;
     position: relative;
@@ -79,31 +103,113 @@ body {
     text-transform: uppercase;
 }
 
-
-
-
 /* Hero Section Styles */
 .hero {
-    background-image: url(assets/img/pyramid-landscape.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
+    position: relative;
+    background-image: url('../img/hero.jpg');
     background-size: cover;
-    height: 50vh;
+    background-position: center;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffffff;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    width: 100%;
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    color: lightgray;
     text-align: center;
-    color: var(--primary-black);
-    padding: 20px;
+    z-index: 2;
+    font-size: .75rem;
 }
 
-.hero h1 {
-    font-size: 2.5rem;
-    margin: 20px;
+/* Form Styles within Hero Section */
+.booking-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+    z-index: 3;
+
 }
 
-/* Main Content Styles */
+.form-field {
+    flex: 1;
+    position: relative;
+}
+
+.form-field.button-container {
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.booking-form .navbar-book {
+    margin-top: 12px;
+
+}
+
+
+
+.form-field::after {
+    content: '\25BC';
+    color: #fff;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 12px;
+}
+
+.form-field select {
+    padding: 10px;
+    padding-right: 30px;
+    border: none;
+    border-bottom: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    appearance: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Main Content and Section Styles */
 main {
     flex-grow: 1;
     display: flex;
@@ -112,7 +218,6 @@ main {
     padding: 20px;
 }
 
-/* Section Styles */
 .about-us,
 .guest-reviews,
 .special-offers,
@@ -124,8 +229,6 @@ main {
     text-align: center;
     margin: auto;
 }
-
-/* Additional styles for specific sections (e.g., reviews-container, offers, etc.) */
 
 /* Footer Styles */
 footer {
@@ -148,57 +251,41 @@ footer {
     flex-direction: column;
 }
 
-/* Dark Mode */
-body.dark-mode {
-    background-color: #000;
-    color: #fff;
+/* Media Queries for Responsive Design */
+@media only screen and (min-width: 0em) {
+    /* Extra small devices */
 }
 
-
-
-
-/* Add more styles as needed */
-/* Media Queries for Responsive Design */
-@media only screen and (min-width: 0em) {}
-
-
-/* xs */
 @media (min-width: 475px) {
     .page-container {
         max-width: 475px;
     }
 }
 
-/* sm */
 @media (min-width: 640px) {
     .page-container {
         max-width: 640px;
     }
 }
 
-/* md */
 @media (min-width: 768px) {
     .page-container {
         max-width: 768px;
     }
 }
 
-/* lg */
 @media (min-width: 1024px) {
     .page-container {
         max-width: 1024px;
     }
-
 }
 
-/* xl */
 @media (min-width: 1280px) {
     .page-container {
         max-width: 1280px;
     }
 }
 
-/* 2xl */
 @media (min-width: 1536px) {
     .page-container {
         max-width: 1536px;
