@@ -16,7 +16,7 @@
     <meta name="version" content="1.0" />
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/style/style.css?v=2.0" />
+    <link rel="stylesheet" href="assets/style/style.css?v=2.1" />
     <link rel="stylesheet" href="assets/style/navbar.css?v=1.11" />
     <link rel="stylesheet" href="assets/style/dark-mode.css?v=1.1" />
     <link rel="stylesheet" href="assets/style/footer.css?v=1.0" />
@@ -197,17 +197,39 @@
 
         <!-- Hero Section -->
         <section class="hero">
-          <h1>Your next travel destination</h1>
-          <p>
-            Discover the enchanting Sahara Oasis Hotel, a luxurious haven
-            nestled in the heart of Sudan's breathtaking landscapes. Book your
-            unforgettable getaway now.
-          </p>
-          <div class="navbar-book">
-            <a href="#" class="book-now">
-              <span class="buttonMobile">Book</span>
-              <span class="buttonDesktop">Book Now</span>
-            </a>
+          <div class="hero-content">
+            <h1 class="hero-title">THE OASIS HOTEL</h1>
+            <form class="booking-form">
+              <div class="form-field">
+                <select id="dates" name="dates" required>
+                  <option value="" disabled selected>Dates</option>
+                  <!-- Populate with options -->
+                </select>
+              </div>
+              <div class="form-field">
+                <select id="rooms" name="rooms" required>
+                  <option value="" disabled selected>Room</option>
+                  <!-- Populate with room options -->
+                </select>
+              </div>
+              <div class="form-field">
+                <select id="guests" name="guests" required>
+                  <option value="" disabled selected>Guests</option>
+                  <!-- Populate with options -->
+                </select>
+              </div>
+
+              <div class="navbar-book">
+                <a href="pages/bookNow.html" class="book-now">
+                  <span class="buttonMobile">Book</span>
+                  <span class="buttonDesktop">Book Now</span>
+                </a>
+              </div>
+            </form>
+            <p class="hero-description">
+              The Oasis Hotel is part of the Osman Resort and Dining located in
+              Khartoum, Sudan.
+            </p>
           </div>
         </section>
       </header>
