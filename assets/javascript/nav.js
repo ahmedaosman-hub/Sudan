@@ -26,16 +26,3 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.style.overflow = "";
   });
 });
-
-document.addEventListener("DOMContentLoaded", function () {
-  const darkModeToggle = document.getElementById("dark-mode-toggle");
-  const iconMoon = document.querySelector(".icon-moon");
-  const iconSun = document.querySelector(".icon-sun");
-
-  darkModeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    iconMoon.style.display =
-      iconMoon.style.display === "none" ? "block" : "none";
-    iconSun.style.display = iconSun.style.display === "none" ? "block" : "none";
-  });
-});
