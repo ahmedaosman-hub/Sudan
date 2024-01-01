@@ -1,38 +1,32 @@
-// check for saved 'darkMode' in localStorage
-let darkMode = localStorage.getItem("darkMode");
+document.addEventListener("DOMContentLoaded", () => {
+  // Retrieve 'darkMode' state from localStorage
+  let darkMode = localStorage.getItem("darkMode");
+  const darkModeToggle = document.querySelector("#dark-mode-toggle");
 
-const darkModeToggle = document.querySelector("#dark-mode-toggle");
+  // Function to enable dark mode
+  const enableDarkMode = () => {
+    document.body.classList.add("dark-mode"); // Match the class name used in your CSS
+    localStorage.setItem("darkMode", "enabled");
+  };
 
-const enableDarkMode = () => {
-  // 1. Add the class to the body
-  document.body.classList.add("darkmode");
-  // 2. Update darkMode in localStorage
-  localStorage.setItem("darkMode", "enabled");
-};
+  // Function to disable dark mode
+  const disableDarkMode = () => {
+    document.body.classList.remove("dark-mode"); // Match the class name used in your CSS
+    localStorage.setItem("darkMode", "disabled");
+  };
 
-const disableDarkMode = () => {
-  // 1. Remove the class from the body
-  document.body.classList.remove("darkmode");
-  // 2. Update darkMode in localStorage
-  localStorage.setItem("darkMode", null);
-};
-
-// If the user already visited and enabled darkMode
-// start things off with it on
-if (darkMode === "enabled") {
-  enableDarkMode();
-}
-
-// When someone clicks the button
-darkModeToggle.addEventListener("click", () => {
-  // get their darkMode setting
-  darkMode = localStorage.getItem("darkMode");
-
-  // if it not current enabled, enable it
-  if (darkMode !== "enabled") {
+  // Enable dark mode if it was previously enabled
+  if (darkMode === "enabled") {
     enableDarkMode();
-    // if it has been enabled, turn it off
-  } else {
-    disableDarkMode();
   }
+
+  // Toggle dark mode on button click
+  darkModeToggle.addEventListener("click", () => {
+    darkMode = localStorage.getItem("darkMode");
+    if (darkMode !== "enabled") {
+      enableDarkMode();
+    } else {
+      disableDarkMode();
+    }
+  });
 });
