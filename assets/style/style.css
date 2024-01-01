@@ -35,6 +35,15 @@ h6 {
     font-family: var(--regular-heading);
 }
 
+h2>a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    display: inline;
+}
+
 /* Apply the body font to all body text */
 body,
 p,
