@@ -1,0 +1,65 @@
+<form class="booking-form">
+  <div class="roomDates">
+    <div class="form-field">
+      <label for="checkIn">Check In</label>
+      <input
+        type="date"
+        id="checkIn"
+        name="dates"
+        required
+        placeholder="Dates"
+      />
+    </div>
+    <div class="form-field">
+      <label for="checkOut">Check Out</label>
+      <input
+        type="date"
+        id="checkOut"
+        name="dates"
+        required
+        placeholder="Dates"
+      />
+    </div>
+  </div>
+  <div class="form-field">
+    <select id="rooms" name="rooms" required>
+      <option value="" disabled selected>Room</option>
+      <option value="single">Single Room</option>
+      <option value="double">Double Room</option>
+      <option value="suite">Suite</option>
+    </select>
+  </div>
+  <div class="form-field">
+    <select id="guests" name="guests" required>
+      <option value="" disabled selected>Guests</option>
+      <!-- Populate with options -->
+    </select>
+  </div>
+
+  <div class="navbar-book">
+    <a href="pages/bookNow.html" class="book-now">
+      <span class="buttonMobile">Book</span>
+      <span class="buttonDesktop">Book Now</span>
+    </a>
+  </div>
+</form>
+
+/* Form Styles within Hero Section */ .booking-form { display: flex;
+justify-content: center; align-items: center; flex-wrap: wrap; gap: 10px;
+margin-top: 20px; z-index: 3; } .form-field { flex: 1; position: relative; }
+.form-field.button-container { flex-grow: 0; flex-shrink: 0; } .booking-form
+.navbar-book { margin-top: 12px; } .form-field::after { color: #fff; position:
+absolute; right: 10px; top: 50%; transform: translateY(-50%); pointer-events:
+none; font-size: 12px; } .form-field select { padding: 10px; padding-right:
+30px; border: none; border-bottom: 2px solid #fff; background-color:
+transparent; color: #fff; appearance: none; cursor: pointer; width: 100%; }
+.form-field input[type="date"] { padding: 10px; border: none; border-bottom: 2px
+solid #fff; background-color: transparent; appearance: none; width: 100%;
+cursor: pointer; } .form-field>label { margin: 0; } .roomDates { display: flex;
+justify-content: space-between; background-color: rgba(245, 245, 245, 0.8);
+padding: 15px; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+.roomDates .form-field { display: flex; flex-direction: column; margin-right:
+10px; } .roomDates .form-field label { margin-bottom: 5px; font-weight: bold;
+color: #333; } .roomDates .form-field input[type="date"] { padding: 10px;
+border: 1px solid black; border-radius: 4px; background-color: rgba(255, 255,
+255, 0.8); cursor: pointer; }
