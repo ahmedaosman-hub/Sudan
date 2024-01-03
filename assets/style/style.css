@@ -27,11 +27,7 @@
 
 /* Apply the regular heading font to all header elements */
 h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h2 {
     font-family: var(--regular-heading);
 }
 
@@ -42,6 +38,10 @@ h2>a {
     font-size: inherit;
     font-family: inherit;
     display: inline;
+}
+
+a {
+    text-decoration: none;
 }
 
 /* Apply the body font to all body text */
@@ -172,56 +172,165 @@ body {
     font-size: .75rem;
 }
 
-/* carousel styling */
-.carousel-container {
+#oasis-offers {
+    overflow: hidden;
     position: relative;
-    width: 80%;
-    /* Adjust as needed */
-    margin: auto;
-}
-
-.carousel-slide {
-    display: none;
-    /* Hide all slides by default */
-}
-
-.carousel-content {
-    position: absolute;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    /* Semi-transparent background for text */
-    color: white;
     width: 100%;
     text-align: center;
-}
-
-.carousel-prev,
-.carousel-next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    /* Adjust as needed */
-    padding: 16px;
+    background-color: #1e1e1e;
     color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    /* Rounded corners for left arrow */
-    user-select: none;
+    padding: 20px;
 }
 
-.carousel-next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-    /* Rounded corners for right arrow */
+.offers-title {
+
+    margin-bottom: 10px;
 }
 
-.carousel-prev:hover,
-.carousel-next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+.offers-tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+}
+
+.tab {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.offer-content {
+    display: none;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border: 1px solid #444;
+}
+
+.offer-content.active {
+    display: block;
+}
+
+#oasis-offers .carousel-item .book-now .buttonMobile {
+    color: white;
+}
+
+#oasis-offers .carousel-item .book-now .buttonDesktop {
+    color: white;
+}
+
+.carousel-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    color: white;
+    text-align: center;
+    width: 330px;
+    max-width: 100%;
+    border: 1px solid #444;
+    box-sizing: border-box;
+    padding: 0;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.carousel-item:first-of-type {
+    opacity: 1;
+}
+
+.carousel-item img {
+    width: 100%;
+    /* Full-width images */
+    /* Maximum width */
+    height: auto;
+    display: block;
+    /* Maintain aspect ratio */
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.carousel-item h3,
+.carousel-item p,
+.carousel-item ul,
+.carousel-item .book-now {
+    padding-left: 20px;
+    /* Left padding */
+    padding-right: 20px;
+    /* Right padding */
+    width: calc(100% - 40px);
+    /* Full width minus padding */
+    box-sizing: border-box;
+    /* Include padding in width calculation */
+}
+
+.carousel-item h3 {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: var(--primary-white);
+}
+
+.carousel-item p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.carousel-item ul {
+    list-style: none;
+    /* No bullets */
+    padding: auto;
+    text-align: left;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.carousel-item ul li {
+    position: relative;
+    padding-left: 1.5em;
+    text-align: left;
+}
+
+.carousel-item ul li:before {
+    content: '';
+    /* Custom bullet style */
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 8px;
+    height: 8px;
+    background-color: black;
+    /* White bullet color */
+    border-radius: 50%;
+    /* Round bullet */
+}
+
+.carousel-item .book-now {
+    width: 273px;
+    margin: 30px 0 0;
+    padding: 22px 0 21px;
+    font-weight: 600;
+    display: inline-block;
+    border: 2px solid #7c6f55;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 16px;
+    cursor: pointer;
+    color: #a00d2c;
+    margin-bottom: 20px;
+}
+
+.carousel-item .book-now:hover {
+    background-color: #a00d2c;
+    color: black;
 }
 
 /* Main Content and Section Styles */
@@ -230,7 +339,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+
 }
 
 .about-us,
