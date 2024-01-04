@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
       offerToShow.style.display = "flex"; // Adjust display style as needed
     }
   }
-
   // Add click event listeners to the tabs
   tabs.forEach((tab) => {
     tab.addEventListener("click", function () {
@@ -21,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
       showOffer(targetId);
     });
   });
-
   // Hide all offers initially
   hideAllOffers();
 });
