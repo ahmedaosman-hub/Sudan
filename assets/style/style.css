@@ -61,6 +61,40 @@ button {
     font-family: var(--body);
 }
 
+.alternate-section {
+    padding: 60px 0;
+}
+
+.alternate-section.bg-light {
+    background-color: #f8f9fa;
+}
+
+.alternate-section img.rounded-circle {
+    border-radius: 50%;
+    max-width: 80%;
+    height: auto;
+}
+
+.alternate-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.alternate-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.alternate-section .btn-primary {
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+/* Add media queries for responsive adjustments as needed */
+
 /* Apply the call-to-action font to all buttons */
 
 button,
