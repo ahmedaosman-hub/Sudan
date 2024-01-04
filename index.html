@@ -16,7 +16,7 @@
     />
     <meta content="1.2" name="version" />
     <!-- Stylesheets -->
-    <link href="assets/style/style.css?v=2.4" rel="stylesheet" />
+    <link href="assets/style/index.css?v=2.4" rel="stylesheet" />
     <link href="assets/style/navbar.css?v=1.2" rel="stylesheet" />
     <link href="assets/style/dark-mode.css?v=1.1" rel="stylesheet" />
     <link href="assets/style/footer.css?v=1.0" rel="stylesheet" />
@@ -25,12 +25,11 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <!-- Bootstrap CSS -->
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
     />
 
     <title>The Oasis Hotel</title>
@@ -328,10 +327,15 @@
           </div>
         </section>
 
-        <section class="alternate-section">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6">
+        <section id="servicesCarousel" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="assets/img/dining/dining.jpg"
+                alt="Exquisite Dining"
+                class="img-fluid"
+              />
+              <div class="carousel-caption">
                 <h2>Exquisite Dining</h2>
                 <p>
                   Indulge in an extraordinary dining experience where gourmet
@@ -340,53 +344,32 @@
                 </p>
                 <button class="btn btn-primary">Discover Dining</button>
               </div>
-              <div class="col-md-6">
-                <img
-                  src="path_to_dining_image.jpg"
-                  alt="Exquisite Dining"
-                  class="img-fluid"
-                />
-              </div>
             </div>
-          </div>
-        </section>
 
-        <!-- Suites Section -->
-        <section class="alternate-section">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6 order-md-2">
+            <div class="carousel-item">
+              <img
+                src="assets/img/suites/suites.jpg"
+                alt="Luxurious Suites"
+                class="img-fluid"
+              />
+              <div class="carousel-caption">
                 <h2>Luxurious Suites</h2>
                 <p>
-                  Retreat to the comfort of our suites, where luxury meets
-                  tranquility. Each suite is a haven of plush elegance and
-                  modern sophistication.
+                  Our suites are designed to provide the ultimate comfort and
+                  relaxation. From the plush bedding to the spacious bathrooms,
+                  every detail is carefully crafted to ensure a memorable stay.
                 </p>
-                <button class="btn btn-primary">View Our Suites</button>
-              </div>
-              <div class="col-md-6 order-md-1">
-                <img
-                  src="path_to_suites_image.jpg"
-                  alt="Luxurious Suites"
-                  class="img-fluid"
-                />
+                <button class="btn btn-primary">Explore Suites</button>
               </div>
             </div>
-          </div>
-        </section>
 
-        <!-- Wellness Section -->
-        <section id="wellness" class="alternate-section">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-lg-6">
-                <img
-                  src="path_to_your_wellness_image.jpg"
-                  alt="Wellness and Spa"
-                  class="img-fluid rounded-circle"
-                />
-              </div>
-              <div class="col-lg-6">
+            <div class="carousel-item">
+              <img
+                src="assets/img/wellness/wellness.jpg"
+                alt="Wellness and Spa"
+                class="img-fluid rounded-circle"
+              />
+              <div class="carousel-caption">
                 <h2>Wellness & Spa</h2>
                 <p>
                   Rejuvenate your body and soul in our serene wellness center.
@@ -397,6 +380,24 @@
               </div>
             </div>
           </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </section>
 
         <!-- Experience Section -->
@@ -414,7 +415,7 @@
               </div>
               <div class="col-lg-6">
                 <img
-                  src="path_to_your_experience_image.jpg"
+                  src="assets/img/experience/camels.jpg"
                   alt="Authentic Experiences"
                   class="img-fluid rounded-circle"
                 />
@@ -429,7 +430,7 @@
             <div class="row align-items-center">
               <div class="col-lg-6">
                 <img
-                  src="path_to_your_events_image.jpg"
+                  src="assets/img/events/desertSafari.webp"
                   alt="Events and Conferences"
                   class="img-fluid rounded-circle"
                 />
@@ -578,10 +579,10 @@
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
     <script
-      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
-      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
     ></script>
     <script src="assets/javascript/nav.js"></script>
     <script src="assets/javascript/dark.js"></script>

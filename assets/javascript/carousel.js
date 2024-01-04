@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const tabs = document.querySelectorAll(".offer-tabs .tab");
-  const carouselItems = document.querySelectorAll(".carousel-item");
+  const tabs = document.querySelectorAll("#oasis-offers .offer-tabs .tab");
+  const carouselItems = document.querySelectorAll(
+    "#oasis-offers .carousel-item"
+  );
 
   function hideAllOffers() {
     carouselItems.forEach((item) => (item.style.display = "none"));
@@ -8,18 +10,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function showOffer(offerId) {
     hideAllOffers();
-    const offerToShow = document.getElementById(offerId);
+    const offerToShow = document.querySelector("#oasis-offers #" + offerId);
     if (offerToShow) {
-      offerToShow.style.display = "flex"; // Adjust display style as needed
+      offerToShow.style.display = "flex";
     }
   }
-  // Add click event listeners to the tabs
+
+  function setActiveTab(tab) {
+    tabs.forEach((tab) => tab.classList.remove("tab-active"));
+    tab.classList.add("tab-active");
+  }
+
   tabs.forEach((tab) => {
     tab.addEventListener("click", function () {
       const targetId = this.getAttribute("data-target");
       showOffer(targetId);
+      setActiveTab(this);
     });
   });
-  // Hide all offers initially
+
+  // Initialize
   hideAllOffers();
+  if (carouselItems.length > 0) {
+    carouselItems[0].style.display = "flex";
+    setActiveTab(tabs[0]);
+  }
 });

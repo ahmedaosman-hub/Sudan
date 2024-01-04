@@ -2,8 +2,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=Lato&family=Raleway:wght@700&display=swap');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
-/* Root Variables for Theme Management */
 
+/* Root Variables for Theme Management */
 :root {
     --regular-heading: 'Cormorant Garamond', sans-serif;
     --call-to-action: 'Raleway', serif;
@@ -19,7 +19,6 @@
 }
 
 /* Universal Styles */
-
 * {
     font-family: var(--body);
     padding: 0;
@@ -27,21 +26,14 @@
     box-sizing: border-box;
 }
 
-/* Apply the regular heading font to all header elements */
 
+
+/* Apply the regular heading font to all header elements */
 h1,
 h2 {
     font-family: var(--regular-heading);
 }
 
-h2>a {
-    color: inherit;
-    text-decoration: none;
-    font-weight: inherit;
-    font-size: inherit;
-    font-family: inherit;
-    display: inline;
-}
 
 a {
     text-decoration: none;
@@ -61,42 +53,10 @@ button {
     font-family: var(--body);
 }
 
-.alternate-section {
-    padding: 60px 0;
-}
 
-.alternate-section.bg-light {
-    background-color: #f8f9fa;
-}
 
-.alternate-section img.rounded-circle {
-    border-radius: 50%;
-    max-width: 80%;
-    height: auto;
-}
-
-.alternate-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.alternate-section p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-}
-
-.alternate-section .btn-primary {
-    font-size: 1rem;
-    padding: 10px 20px;
-    color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
-}
-
-/* Add media queries for responsive adjustments as needed */
 
 /* Apply the call-to-action font to all buttons */
-
 button,
 .button,
 input[type="submit"],
@@ -106,7 +66,6 @@ input[type="button"],
 }
 
 /* Dark Mode */
-
 body.dark-mode {
     --foreground: var(--clr-light);
     --background: var(--clr-dark);
@@ -118,7 +77,6 @@ body.dark-mode {
 }
 
 /* Body and Container Styles */
-
 body {
     margin: 0;
     padding: 0;
@@ -132,7 +90,6 @@ body {
 }
 
 /* Button Styles */
-
 .button {
     overflow: visible;
     margin: 0;
@@ -155,7 +112,6 @@ body {
 }
 
 /* Hero Section Styles */
-
 .hero {
     position: relative;
     background-image: url('../img/hero.jpg');
@@ -243,6 +199,13 @@ body {
     cursor: pointer;
 }
 
+.tab-active {
+    background-color: var(--primary-red);
+    border: 1px solid var(--primary-white);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    color: white;
+}
+
 .offer-content {
     display: none;
     background-color: #1e1e1e;
@@ -287,11 +250,9 @@ body {
 
 .carousel-item img {
     width: 100%;
-    /* Full-width images */
-    /* Maximum width */
-    height: auto;
+    height: 200px;
+    object-fit: cover;
     display: block;
-    /* Maintain aspect ratio */
     padding: 0;
     margin-bottom: 10px;
 }
@@ -335,20 +296,20 @@ body {
     position: relative;
     padding-left: 1.5em;
     text-align: left;
+    padding-bottom: 10px;
+
+
 }
 
 .carousel-item ul li:before {
-    content: '';
+    content: '◇';
     /* Custom bullet style */
     position: absolute;
     left: 0;
     top: 0.5em;
     width: 8px;
     height: 8px;
-    background-color: black;
-    /* White bullet color */
-    border-radius: 50%;
-    /* Round bullet */
+    text-align: center;
 }
 
 .carousel-item .book-now {
@@ -447,101 +408,80 @@ body {
     color: #000;
 }
 
-/* General carousel styles */
 
-#dining-section .carousel {
+
+/* Carousel Container */
+#servicesCarousel {
     position: relative;
-    max-width: 600px;
-    /* Adjust as needed for your layout */
-    margin: auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    /* Optional: adds shadow for depth */
+    background-color: #f2f2f2;
+    /* Light grayish background */
 }
 
-#dining-section .carousel-inner {
+/* Carousel Inner */
+#servicesCarousel .carousel-inner {
     position: relative;
+    overflow: hidden;
 }
 
-#dining-section .carousel-item {
-    text-align: center;
-    color: white;
-    background: black;
-    /* Fallback color */
+/* Carousel Items */
+#servicesCarousel .carousel-item {
+    display: none;
+    /* Hide all items initially */
+    transition: opacity 0.6s ease-in-out;
 }
 
-#dining-section .carousel-item img {
-    width: 100%;
+#servicesCarousel .carousel-item.active {
     display: block;
-    /* Ensures no additional space below the image */
-    border-radius: 15px;
-    /* Optional: if you want rounded corners */
+    /* Show only the active item */
+    opacity: 1;
 }
 
-/* Caption styles */
+/* Carousel Content */
+#servicesCarousel .carousel-item img {
+    max-width: 100%;
+    height: auto;
+}
 
-#dining-section .carousel-caption {
+#servicesCarousel .carousel-item h2,
+#servicesCarousel .carousel-item p {
+    margin: 15px 0;
+    /* Spacing for text */
+}
+
+/* Carousel Controls */
+#servicesCarousel .carousel-control-prev,
+#servicesCarousel .carousel-control-next {
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    /* Semi-transparent overlay */
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    padding: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35px;
+    height: 35px;
+    background-color: #000;
+    /* Black background for arrows */
+    color: #fff;
+    /* White arrows */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
-#dining-section .carousel-caption h3 {
-    font-size: 1.5rem;
-    /* Adjust size as needed */
+#servicesCarousel .carousel-control-prev {
+    left: 10px;
 }
 
-#dining-section .carousel-caption p {
-    font-size: 1rem;
-    /* Adjust size as needed */
+#servicesCarousel .carousel-control-next {
+    right: 10px;
 }
 
-#dining-section .btn-carousel {
-    background: #fff;
-    color: #000;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 10px;
-    display: inline-block;
-    transition: background-color 0.3s ease;
+#servicesCarousel .carousel-control-prev-icon,
+#servicesCarousel .carousel-control-next-icon {
+    background-image: none;
+    /* Remove default arrows */
 }
 
-#dining-section .btn-carousel:hover {
-    background: #f8f8f8;
-    /* Slightly darker on hover */
-    color: #000;
-}
-
-/* Arrow styles for carousel control */
-
-#dining-section .carousel-control-prev-icon,
-#dining-section .carousel-control-next-icon {
-    width: 50px;
-    /* Size of the arrows */
-    height: 50px;
-    background-image: url('path_to_your_custom_arrow_image');
-    /* Path to your custom arrow image */
-    background-size: cover;
-}
-
-/* Indicators (dots) customization */
-
-#dining-section .carousel-indicators li {
-    background-color: #fff;
-    /* Active indicator color */
-    border-color: transparent;
-}
-
-#dining-section .carousel-indicators .active {
-    background-color: #333;
-    /* Inactive indicator color */
-}
+/* Optional: Add custom arrow icons or use font icons */
 
 /* Main Content and Section Styles */
 
