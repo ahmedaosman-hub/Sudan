@@ -16,7 +16,7 @@
     />
     <meta content="1.2" name="version" />
     <!-- Stylesheets -->
-    <link href="assets/style/index.css?v=2.4" rel="stylesheet" />
+    <link href="assets/style/index.css?v=2.5" rel="stylesheet" />
     <link href="assets/style/navbar.css?v=1.2" rel="stylesheet" />
     <link href="assets/style/dark-mode.css?v=1.1" rel="stylesheet" />
     <link href="assets/style/footer.css?v=1.0" rel="stylesheet" />
@@ -238,7 +238,7 @@
         <section id="oasis-offers">
           <h2 class="offers-title">Oasis Offers</h2>
 
-          <div class="offer-tabs" style="margin-bottom: 20px">
+          <div class="tabs" style="margin-bottom: 20px">
             <button class="tab" data-target="FamilyOffer">Family</button>
             <button class="tab" data-target="RomanticOffer">Romantic</button>
             <button class="tab" data-target="AdventureOffer">Adventure</button>
@@ -251,7 +251,7 @@
               src="assets/img/cultural-exploration.jpg"
             />
 
-            <h3>Cultural Exploration Package</h3>
+            <h3>Cultural Exploration</h3>
 
             <p>
               Enjoy a thrilling adventure with our special cultural packages.
@@ -327,131 +327,228 @@
           </div>
         </section>
 
-        <section id="servicesCarousel" class="carousel slide">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img
-                src="assets/img/dining/dining.jpg"
-                alt="Exquisite Dining"
-                class="img-fluid"
-              />
-              <div class="carousel-caption">
-                <h2>Exquisite Dining</h2>
-                <p>
-                  Indulge in an extraordinary dining experience where gourmet
-                  tastes, elegant ambiance, and impeccable service come together
-                  to create unforgettable moments.
-                </p>
-                <button class="btn btn-primary">Discover Dining</button>
-              </div>
-            </div>
+        <section id="dining">
+          <h2 class="dining-title">Dining Experiences</h2>
 
-            <div class="carousel-item">
-              <img
-                src="assets/img/suites/suites.jpg"
-                alt="Luxurious Suites"
-                class="img-fluid"
-              />
-              <div class="carousel-caption">
-                <h2>Luxurious Suites</h2>
-                <p>
-                  Our suites are designed to provide the ultimate comfort and
-                  relaxation. From the plush bedding to the spacious bathrooms,
-                  every detail is carefully crafted to ensure a memorable stay.
-                </p>
-                <button class="btn btn-primary">Explore Suites</button>
-              </div>
-            </div>
-
-            <div class="carousel-item">
-              <img
-                src="assets/img/wellness/wellness.jpg"
-                alt="Wellness and Spa"
-                class="img-fluid rounded-circle"
-              />
-              <div class="carousel-caption">
-                <h2>Wellness & Spa</h2>
-                <p>
-                  Rejuvenate your body and soul in our serene wellness center.
-                  From relaxing massages to invigorating workouts, we offer a
-                  comprehensive approach to your well-being.
-                </p>
-                <a href="#" class="btn btn-primary">Explore Wellness</a>
-              </div>
-            </div>
+          <div class="tabs" style="margin-bottom: 20px">
+            <button class="tab" data-target="NileBreeze">Nile Breeze</button>
+            <button class="tab" data-target="MediterraneanMirage">
+              Mediterranean Mirage
+            </button>
+            <button class="tab" data-target="SaharaSpice">Sahara Spice</button>
           </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExample"
-            data-bs-slide="prev"
+
+          <!-- Nile Breeze -->
+          <div class="carousel-item" id="NileBreeze" style="opacity: 1">
+            <img alt="Nile Breeze" src="assets/img/dining/nileBreeze.jpg" />
+            <h3>Nile Breeze</h3>
+            <p>
+              Experience the serenity of the Nile at Nile Breeze. Our menu
+              features contemporary Sudanese cuisine, with a focus on fresh,
+              locally-sourced ingredients and seafood. Enjoy traditional dishes
+              in a tranquil setting with stunning river views, complemented by
+              live traditional music on weekends.
+            </p>
+            <a class="book-now btn-carousel" href="pages/bookNow.html"
+              ><span class="buttonMobile">Book</span>
+              <span class="buttonDesktop">Book Now</span></a
+            >
+          </div>
+
+          <!-- Mediterranean Mirage -->
+          <div
+            class="carousel-item"
+            id="MediterraneanMirage"
+            style="opacity: 1"
           >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExample"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+            <img
+              alt="Mediterranean Mirage"
+              src="assets/img/dining/mediterraneanMirage.jpg"
+            />
+            <h3>Mediterranean Mirage</h3>
+            <p>
+              Dive into the essence of Mediterranean and Middle Eastern flavors
+              at Mediterranean Mirage. Enjoy a fusion of fresh seafood, grilled
+              meats, and vibrant salads in an oasis-like ambiance. Look out for
+              our themed nights celebrating different Mediterranean cultures.
+            </p>
+            <a class="book-now btn-carousel" href="pages/bookNow.html"
+              ><span class="buttonMobile">Book</span>
+              <span class="buttonDesktop">Book Now</span></a
+            >
+          </div>
+
+          <!-- Sahara Spice -->
+          <div class="carousel-item" id="SaharaSpice" style="opacity: 1">
+            <img alt="Sahara Spice" src="assets/img/dining/saharaSpice.webp" />
+            <h3>Sahara Spice</h3>
+            <p>
+              Sahara Spice brings the bold and aromatic flavors of North Africa
+              and the Middle East to you. Relish in spiced meats, couscous, and
+              tagines in an exotic setting. Enhance your dining with live belly
+              dancing and folk music on select evenings.
+            </p>
+            <a class="book-now btn-carousel" href="pages/bookNow.html"
+              ><span class="buttonMobile">Book</span>
+              <span class="buttonDesktop">Book Now</span></a
+            >
+          </div>
         </section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="alternate-section bg-light">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-lg-6">
-                <h2>Authentic Experiences</h2>
-                <p>
-                  Embark on a journey through Sudan's rich history and vibrant
-                  culture. Our curated experiences will leave you with lasting
-                  memories and a deep connection to this land.
-                </p>
-                <a href="#" class="btn btn-primary">Experience Sudan</a>
-              </div>
-              <div class="col-lg-6">
-                <img
-                  src="assets/img/experience/camels.jpg"
-                  alt="Authentic Experiences"
-                  class="img-fluid rounded-circle"
-                />
-              </div>
-            </div>
+        <section id="experience-sudan">
+          <h2 class="sudan-title">Experience Sudan</h2>
+          <p>
+            Discover the rich heritage and vibrant culture of Sudan during your
+            stay at Oasis Hotel. Our curated experiences offer an authentic
+            insight into the local lifestyle, traditions, and history.
+          </p>
+          <div class="tabs" style="margin-bottom: 20px">
+            <button class="tab" data-target="SudaneseCulture">
+              Sudanese Tour
+            </button>
+            <button class="tab" data-target="NubianVillage">
+              Nubian Village
+            </button>
+            <button class="tab" data-target="WildlifeSafari">
+              Wildlife Safari
+            </button>
+          </div>
+
+          <!-- Sudanese Cultural Tour -->
+          <div class="carousel-item" id="SudaneseCulture" style="opacity: 1">
+            <img
+              alt="Sudanese Cultural Tour"
+              src="assets/img/experience/pyramid-landscape.jpg"
+            />
+            <h3>Sudanese Cultural Tour</h3>
+            <p>
+              Embark on a journey through time with our guided cultural tours.
+              Visit ancient pyramids, explore bustling markets, and learn about
+              Sudan’s historical significance.
+            </p>
+            <a class="book-now btn-carousel" href="pages/bookNow.html">
+              <span class="buttonMobile">Book</span>
+              <span class="buttonDesktop">Book Now</span>
+            </a>
+          </div>
+
+          <!-- Nubian Village Visit -->
+          <div class="carousel-item" id="NubianVillage" style="opacity: 1">
+            <img
+              alt="Nubian Village Visit"
+              src="assets/img/experience/temple.jpg"
+            />
+            <h3>Nubian Village Visit</h3>
+            <p>
+              Experience the unique Nubian culture with a visit to a traditional
+              village. Enjoy local cuisine, music, and dance, and interact with
+              the warm-hearted Nubian community.
+            </p>
+            <a class="book-now btn-carousel" href="pages/bookNow.html">
+              <span class="buttonMobile">Book</span>
+              <span class="buttonDesktop">Book Now</span>
+            </a>
+          </div>
+
+          <!-- Wildlife Safari -->
+          <div class="carousel-item" id="WildlifeSafari" style="opacity: 1">
+            <img alt="Wildlife Safari" src="assets/img/experience/camels.jpg" />
+            <h3>Wildlife Safari</h3>
+            <p>
+              Get up close with Sudan’s diverse wildlife in a thrilling safari
+              adventure. Spot exotic birds, desert animals, and perhaps even a
+              glimpse of the majestic African elephant.
+            </p>
+            <a class="book-now btn-carousel" href="pages/bookNow.html">
+              <span class="buttonMobile">Book</span>
+              <span class="buttonDesktop">Book Now</span>
+            </a>
           </div>
         </section>
 
         <!-- Events Section -->
-        <section id="events" class="alternate-section">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-lg-6">
-                <img
-                  src="assets/img/events/desertSafari.webp"
-                  alt="Events and Conferences"
-                  class="img-fluid rounded-circle"
-                />
-              </div>
-              <div class="col-lg-6">
-                <h2>Events & Conferences</h2>
-                <p>
-                  Our state-of-the-art facilities are the ideal venue for your
-                  events. Whether it's a business conference or a lavish
-                  wedding, we ensure an impeccable experience.
-                </p>
-                <a href="#" class="btn btn-primary">Plan Your Event</a>
-              </div>
-            </div>
+        <section id="events">
+          <h2 class="events-title">Events at Oasis Hotel</h2>
+          <p>
+            Oasis Hotel is not just a place to stay; it's a hub of activity!
+            From cultural celebrations to corporate events, we host a variety of
+            occasions tailored to create unforgettable experiences.
+          </p>
+          <div class="tabs" style="margin-bottom: 20px">
+            <button class="tab" data-target="CulturalFestivals">
+              Sudanese Culture Night
+            </button>
+            <button class="tab" data-target="BusinessConference">
+              Business Conference
+            </button>
+            <button class="tab" data-target="WeddingCelebrations">
+              Weddings
+            </button>
+          </div>
+
+          <!-- Cultural Festivals -->
+          <div class="carousel-item" id="CulturalFestivals" style="opacity: 1">
+            <img
+              alt="Cultural Festivals"
+              src="assets/img/events/desertSafari.webp"
+            />
+            <h3>Cultural Festivals</h3>
+            <p>
+              Join us in celebrating Sudanese culture with our annual festivals.
+              Enjoy traditional music, dance, and a showcase of local arts and
+              crafts.
+            </p>
+            <a class="book-now btn-carousel" href="pages/bookNow.html">
+              <span class="buttonMobile">Book</span>
+              <span class="buttonDesktop">Book Now</span>
+            </a>
+          </div>
+
+          <!-- Business Conferences -->
+          <div class="carousel-item" id="BusinessConference" style="opacity: 1">
+            <img
+              alt="Business Conferences"
+              src="assets/img/events/businessConference.jpg"
+            />
+            <h3>Business Conferences</h3>
+            <p>
+              Our state-of-the-art conference facilities are perfect for your
+              next corporate event. We offer modern amenities, catering
+              services, and professional event planning.
+            </p>
+            <a class="book-now btn-carousel" href="pages/bookNow.html">
+              <span class="buttonMobile">Book</span>
+              <span class="buttonDesktop">Book Now</span>
+            </a>
+          </div>
+
+          <!-- Wedding Celebrations -->
+          <div
+            class="carousel-item"
+            id="WeddingCelebrations"
+            style="opacity: 1"
+          >
+            <img
+              alt="Wedding Celebrations"
+              src="assets/img/events/weddingCelebrations.jpeg"
+            />
+            <h3>Wedding Celebrations</h3>
+            <p>
+              Make your special day truly memorable with our exquisite wedding
+              venues. We provide personalized services to make your wedding
+              celebration a dream come true.
+            </p>
+            <a class="book-now btn-carousel" href="pages/bookNow.html">
+              <span class="buttonMobile">Book</span>
+              <span class="buttonDesktop">Book Now</span>
+            </a>
           </div>
         </section>
 
         <!-- Contact Section -->
         <section id="contact" class="full-width-section">
           <div class="container">
-            <h2>Contact Us</h2>
+            <h2 class="contact-title">Contact Us</h2>
             <p>
               Have questions or need assistance? Our team is here to help you
               with any inquiries.
@@ -485,7 +582,11 @@
                   placeholder="Your Message"
                 ></textarea>
               </div>
-              <button type="submit" class="btn btn-primary">
+              <button
+                type="submit"
+                class="button"
+                style="text-align: center; margin-bottom: 20px"
+              >
                 Send Message
               </button>
             </form>
@@ -493,39 +594,151 @@
         </section>
 
         <!-- FAQ Section -->
+        <!-- FAQ Section -->
         <section id="faq" class="full-width-section">
           <div class="container">
             <h2>Frequently Asked Questions</h2>
-            <div id="accordion">
-              <!-- FAQ Item -->
-              <div class="card">
-                <div class="card-header" id="headingOne">
-                  <h5 class="mb-0">
-                    <button
-                      class="btn btn-link"
-                      data-toggle="collapse"
-                      data-target="#collapseOne"
-                      aria-expanded="true"
-                      aria-controls="collapseOne"
-                    >
-                      How many suites does Oasis Hotel have?
-                    </button>
-                  </h5>
-                </div>
-
+            <div class="accordion" id="accordionFAQ">
+              <!-- FAQ Item 1 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    How many suites does Oasis Hotel have?
+                  </button>
+                </h2>
                 <div
                   id="collapseOne"
-                  class="collapse show"
+                  class="accordion-collapse collapse show"
                   aria-labelledby="headingOne"
-                  data-parent="#accordion"
+                  data-bs-parent="#accordionFAQ"
                 >
-                  <div class="card-body">
+                  <div class="accordion-body">
                     Our hotel boasts a selection of 50 luxurious suites, each
                     offering unparalleled comfort and exclusive amenities.
                   </div>
                 </div>
               </div>
-              <!-- Repeat for other FAQ items -->
+
+              <!-- FAQ Item 2 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                    Do you offer airport shuttle services?
+                  </button>
+                </h2>
+                <div
+                  id="collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingTwo"
+                  data-bs-parent="#accordionFAQ"
+                >
+                  <div class="accordion-body">
+                    Yes, we offer complimentary airport shuttle services for our
+                    guests. Please provide us with your flight details in
+                    advance to arrange your transportation.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ Item 3 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                  >
+                    Are there any dining options on-site?
+                  </button>
+                </h2>
+                <div
+                  id="collapseThree"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingThree"
+                  data-bs-parent="#accordionFAQ"
+                >
+                  <div class="accordion-body">
+                    Yes, our hotel features three exquisite dining options: Nile
+                    Breeze, Mediterranean Mirage, and Sahara Spice, each
+                    offering a unique culinary experience.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ Item 4 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour"
+                    aria-expanded="false"
+                    aria-controls="collapseFour"
+                  >
+                    What are the check-in and check-out times?
+                  </button>
+                </h2>
+                <div
+                  id="collapseFour"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFour"
+                  data-bs-parent="#accordionFAQ"
+                >
+                  <div class="accordion-body">
+                    Check-in is at 3:00 PM, and check-out is at 12:00 PM. Early
+                    check-in and late check-out can be arranged subject to
+                    availability.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ Item 5 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFive"
+                    aria-expanded="false"
+                    aria-controls="collapseFive"
+                  >
+                    Can I host events or conferences at your hotel?
+                  </button>
+                </h2>
+                <div
+                  id="collapseFive"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFive"
+                  data-bs-parent="#accordionFAQ"
+                >
+                  <div class="accordion-body">
+                    Absolutely! We offer versatile event spaces perfect for
+                    conferences, weddings, and other special occasions,
+                    complemented by our professional event planning services.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Additional FAQ items can be added following the same structure -->
             </div>
           </div>
         </section>
@@ -552,7 +765,7 @@
         <!-- Newsletter Signup Prompt -->
 
         <div class="newsletter-signup">
-          <a class="newsletter-link" href="/newsletter"
+          <a class="newsletter-link" href="#"
             >Sign up to the Oasis newsletter</a
           >
         </div>
@@ -560,10 +773,10 @@
 
         <div class="footer-links">
           <div class="link-column">
-            <a href="pages/faq.html">FAQs</a>
-            <a href="pages/terms&conditions.html">Terms & Conditions</a>
-            <a href="pages/contactUs.html">Contact Us</a>
-            <a href="/cookies-notice">Cookies Notice</a>
+            <a href="#faq">FAQs</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Cookies Notice</a>
           </div>
         </div>
         <!-- Copyright Statement -->
@@ -587,5 +800,25 @@
     <script src="assets/javascript/nav.js"></script>
     <script src="assets/javascript/dark.js"></script>
     <script src="assets/javascript/carousel.js"></script>
+    <script>
+      let question = document.querySelectorAll(".question");
+
+      question.forEach((question) => {
+        question.addEventListener("click", (event) => {
+          const active = document.querySelector(".question.active");
+          if (active && active !== question) {
+            active.classList.toggle("active");
+            active.nextElementSibling.style.maxHeight = 0;
+          }
+          question.classList.toggle("active");
+          const answer = question.nextElementSibling;
+          if (question.classList.contains("active")) {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+          } else {
+            answer.style.maxHeight = 0;
+          }
+        });
+      });
+    </script>
   </body>
 </html>

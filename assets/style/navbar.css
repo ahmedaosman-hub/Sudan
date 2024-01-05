@@ -269,7 +269,6 @@
     flex-grow: 1;
 }
 
-.link-icon {}
 
 /* Book Now Button - Call to action button */
 .navbar-book {
@@ -327,6 +326,7 @@
     text-align: center;
     text-transform: uppercase;
     border-radius: 5px;
+    text-decoration: none;
 }
 
 .buttonDesktop {
@@ -335,7 +335,6 @@
 
 .buttonMobile {
     display: block;
-    color: black;
 }
 
 .menu-wrapper {

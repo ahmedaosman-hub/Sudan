@@ -1,9 +1,6 @@
-/* Importing fonts from Google Fonts and icons from Bootstrap Icons */
-
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=Lato&family=Raleway:wght@700&display=swap');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
 
-/* Root Variables for Theme Management */
 :root {
     --regular-heading: 'Cormorant Garamond', sans-serif;
     --call-to-action: 'Raleway', serif;
@@ -18,7 +15,16 @@
     --clr-dark: #00332a;
 }
 
-/* Universal Styles */
+/* For Webkit browsers like Chrome/Safari */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary-red);
+    border-radius: 10px;
+}
+
 * {
     font-family: var(--body);
     padding: 0;
@@ -27,19 +33,27 @@
 }
 
 
+a {
+    transition: color 0.3s ease;
+}
 
-/* Apply the regular heading font to all header elements */
+a:hover {
+    color: var(--primary-red);
+}
+
+h1 {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+}
+
 h1,
 h2 {
     font-family: var(--regular-heading);
-}
 
+}
 
 a {
     text-decoration: none;
 }
-
-/* Apply the body font to all body text */
 
 body,
 p,
@@ -53,10 +67,6 @@ button {
     font-family: var(--body);
 }
 
-
-
-
-/* Apply the call-to-action font to all buttons */
 button,
 .button,
 input[type="submit"],
@@ -65,7 +75,6 @@ input[type="button"],
     font-family: var(--call-to-action);
 }
 
-/* Dark Mode */
 body.dark-mode {
     --foreground: var(--clr-light);
     --background: var(--clr-dark);
@@ -76,7 +85,6 @@ body.dark-mode {
     color: #fff;
 }
 
-/* Body and Container Styles */
 body {
     margin: 0;
     padding: 0;
@@ -89,7 +97,7 @@ body {
     margin-right: auto;
 }
 
-/* Button Styles */
+
 .button {
     overflow: visible;
     margin: 0;
@@ -108,10 +116,10 @@ body {
     letter-spacing: .15625rem;
     line-height: .75rem;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-transform: uppercase;
 }
 
-/* Hero Section Styles */
 .hero {
     position: relative;
     background-image: url('../img/hero.jpg');
@@ -165,81 +173,83 @@ body {
     left: 0;
     width: 100%;
     padding: 20px 0;
-    color: lightgray;
+    color: #D3D3D3;
     text-align: center;
     z-index: 2;
     font-size: .75rem;
 }
 
-#oasis-offers {
+#oasis-offers,
+#dining,
+#events,
+#contact,
+#experience-sudan,
+#faq {
     overflow: hidden;
     position: relative;
     width: 100%;
     text-align: center;
     background-color: #1e1e1e;
-    color: white;
+    color: #FFFFFF;
     padding: 20px;
 }
 
-.offers-title {
+.offers-title,
+.dining-title,
+.sudan-title,
+.events-title,
+.contact-title,
+.faq-title {
     margin-bottom: 10px;
 }
 
-.offers-tabs {
+.tabs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    /* Spacing between tabs */
     margin-bottom: 20px;
 }
 
+
 .tab {
     background-color: #333;
-    color: white;
+    color: #FFFFFF;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 15px;
     cursor: pointer;
+    text-align: center;
+    font-size: 1rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .tab-active {
     background-color: var(--primary-red);
     border: 1px solid var(--primary-white);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    color: white;
+    color: #FFFFFF;
 }
 
-.offer-content {
-    display: none;
-    background-color: #1e1e1e;
-    padding: 20px;
-    border: 1px solid #444;
-}
 
-.offer-content.active {
-    display: block;
-}
 
-#oasis-offers .carousel-item .book-now .buttonMobile {
-    color: white;
-}
-
-#oasis-offers .carousel-item .book-now .buttonDesktop {
-    color: white;
-}
 
 .carousel-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
-    padding: 20px;
+    margin: auto 0;
     background-color: #1e1e1e;
-    color: white;
+    color: #FFFFFF;
     text-align: center;
-    width: 330px;
     max-width: 100%;
     border: 1px solid #444;
     box-sizing: border-box;
-    padding: 0;
     opacity: 0;
     transition: opacity 0.6s ease-in-out;
 }
@@ -260,15 +270,11 @@ body {
 .carousel-item h3,
 .carousel-item p,
 .carousel-item ul,
-.carousel-item .book-now {
+.book-now {
     padding-left: 20px;
-    /* Left padding */
     padding-right: 20px;
-    /* Right padding */
     width: calc(100% - 40px);
-    /* Full width minus padding */
     box-sizing: border-box;
-    /* Include padding in width calculation */
 }
 
 .carousel-item h3 {
@@ -285,7 +291,6 @@ body {
 
 .carousel-item ul {
     list-style: none;
-    /* No bullets */
     padding: auto;
     text-align: left;
     margin-bottom: 20px;
@@ -297,13 +302,10 @@ body {
     padding-left: 1.5em;
     text-align: left;
     padding-bottom: 10px;
-
-
 }
 
 .carousel-item ul li:before {
     content: '◇';
-    /* Custom bullet style */
     position: absolute;
     left: 0;
     top: 0.5em;
@@ -332,159 +334,10 @@ body {
 
 .carousel-item .book-now:hover {
     background-color: #a00d2c;
-    color: black;
+    color: #000000;
 }
-
-#dining-section {
-    text-align: center;
-    color: white;
-    background-color: #000;
-    /* Adjust the background color as needed */
-    padding: 40px 20px;
-}
-
-.dining-title {
-    margin-bottom: 20px;
-    font-size: 1.5em;
-}
-
-.dining-carousel {
-    position: relative;
-    max-width: 500px;
-    /* Adjust width as needed */
-    margin: 0 auto;
-}
-
-.dining-content {
-    position: relative;
-    padding: 20px;
-}
-
-.dining-img {
-    display: block;
-    width: 100%;
-    /* This will make the image responsive */
-    max-width: 500px;
-    height: auto;
-    margin: 0 auto;
-    border-radius: 50%;
-    /* This creates the round shape */
-    overflow: hidden;
-    /* Ensures the image doesn't overflow its container */
-}
-
-.carousel-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 1.5em;
-    z-index: 10;
-}
-
-.carousel-control.left {
-    left: -40px;
-}
-
-.carousel-control.right {
-    right: -40px;
-}
-
-.discover-more {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    border: 2px solid white;
-    text-decoration: none;
-    color: white;
-    transition: background-color 0.3s;
-}
-
-.discover-more:hover {
-    background-color: white;
-    color: #000;
-}
-
-
-
-/* Carousel Container */
-#servicesCarousel {
-    position: relative;
-    background-color: #f2f2f2;
-    /* Light grayish background */
-}
-
-/* Carousel Inner */
-#servicesCarousel .carousel-inner {
-    position: relative;
-    overflow: hidden;
-}
-
-/* Carousel Items */
-#servicesCarousel .carousel-item {
-    display: none;
-    /* Hide all items initially */
-    transition: opacity 0.6s ease-in-out;
-}
-
-#servicesCarousel .carousel-item.active {
-    display: block;
-    /* Show only the active item */
-    opacity: 1;
-}
-
-/* Carousel Content */
-#servicesCarousel .carousel-item img {
-    max-width: 100%;
-    height: auto;
-}
-
-#servicesCarousel .carousel-item h2,
-#servicesCarousel .carousel-item p {
-    margin: 15px 0;
-    /* Spacing for text */
-}
-
-/* Carousel Controls */
-#servicesCarousel .carousel-control-prev,
-#servicesCarousel .carousel-control-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 35px;
-    height: 35px;
-    background-color: #000;
-    /* Black background for arrows */
-    color: #fff;
-    /* White arrows */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-#servicesCarousel .carousel-control-prev {
-    left: 10px;
-}
-
-#servicesCarousel .carousel-control-next {
-    right: 10px;
-}
-
-#servicesCarousel .carousel-control-prev-icon,
-#servicesCarousel .carousel-control-next-icon {
-    background-image: none;
-    /* Remove default arrows */
-}
-
-/* Optional: Add custom arrow icons or use font icons */
 
 /* Main Content and Section Styles */
-
 main {
     flex-grow: 1;
     display: flex;
@@ -496,15 +349,15 @@ main {
 .guest-reviews,
 .special-offers,
 .gallery,
-.events {
+.events,
+.contact,
+.faq {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     margin: auto;
 }
-
-/* Footer Styles */
 
 footer {
     background-color: var(--primary-black);
@@ -526,11 +379,7 @@ footer {
     flex-direction: column;
 }
 
-/* Media Queries for Responsive Design */
-
-@media only screen and (min-width: 0em) {
-    /* Extra small devices */
-}
+@media only screen and (min-width: 0em) {}
 
 @media (min-width: 475px) {
     .page-container {
